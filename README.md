@@ -1,28 +1,37 @@
 # Instructions:
+
+## Install requirements:
 ### Install VirtualBox
-### Install docker-machine
+https://download.virtualbox.org/virtualbox/6.1.18/VirtualBox-6.1.18-142142-OSX.dmg
 ### Install VirtualBox extension pack
+https://download.virtualbox.org/virtualbox/6.1.18/Oracle_VM_VirtualBox_Extension_Pack-6.1.18.vbox-extpack
+### Install docker-machine
+```
+curl -L https://github.com/docker/machine/releases/download/v0.16.2/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine && \
+  chmod +x /usr/local/bin/docker-machine
+```
+### Download and extract pkcmd-lx in the directory containing the Dockerfile
 
 ## docker-machine:
 
-### create and start the machine
+### Create and start the machine:
 ```
 docker-machine create -d virtualbox default
 ```
-### We must stop the machine in order to modify some settings
+### Stop the machine in order to modify some settings:
 ```
 docker-machine stop
 ```
-### Enable USB 2.0 (requires VirtualBox extension pack)
+### Enable USB 2.0 (requires VirtualBox extension pack):
 ```
 vboxmanage modifyvm default --usb on
 vboxmanage modifyvm default --usbehci on
 ```
-# Find details of your PICkit to create a USB filter
+### Find details of your PICkit to create a USB filter:
 ```
 vboxmanage list usbhost
 ```
-### Setup a usb filter so your device automatically gets connected to the Virtualbox VM.
+### Create a USB filter so your device automatically gets connected to the Virtualbox VM.
 ```
 vboxmanage usbfilter add 0 --target default --name  "PICkit 2" --vendorid 0x04d8 --productid 0x0033 --remote no
 ```
