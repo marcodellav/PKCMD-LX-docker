@@ -48,7 +48,8 @@ docker-machine start
 ```
 eval $(docker-machine env default)
 ```
-### ssh into the docker-machine and find out where the PICkit shows up in /dev (mine was `/dev/bus/usb/002/004`)
+### ssh into the docker-machine and find out where the PICkit shows up in /dev 
+#### (mine was `/dev/bus/usb/002/004`)
 ```
 docker-machine ssh 
 ls -al /dev/bus/usb/
@@ -72,7 +73,7 @@ docker exec -it <container_name>  /bin/bash
 ```
 ### run pkcmd-lx
 ```
-root@<CONTAINER_ID>:/app# ./pkcmd-lx-x86_64 --help
+root@<CONTAINER_ID>:/app# ./pkcmd-lx-x86_64 -j
 
 PKCMD-LX 4.06
 A program for interfacing with the PICkit2 and PICkit3 microcontroller programmers
