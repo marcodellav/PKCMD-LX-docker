@@ -1,6 +1,5 @@
-This guide is based on [this]: https://christopherjmcclellan.wordpress.com/2019/04/21/using-usb-with-docker-for-mac/ blog post by Christopher J. McClellan
-
-
+This guide is based on [this] blog post by Christopher J. McClellan
+[this]: https://christopherjmcclellan.wordpress.com/2019/04/21/using-usb-with-docker-for-mac/
 # Instructions:
 
 ## Install requirements:
