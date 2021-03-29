@@ -87,3 +87,4 @@ Looking for tools...
 
 Found 1 tool
 ```
+note that if you disconnect the PICkit, it won't be automatically recognised by the container once you plug it back in, so you'll have to stop the current contaier and create a new one.
